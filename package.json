@@ -1,0 +1,28 @@
+{
+  "name": "calcframework",
+  "version": "0.0.1",
+  "description": "A calculator framework",
+  "main": "./src/main.js",
+  "scripts": {
+    "test": "babel-node ./test/testHarness.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sumasbrot/CalcFramework.git"
+  },
+  "author": "Vlad Sorokin",
+  "license": "MIT",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.15.7",
+    "@babel/core": "7.15.8",
+    "@babel/node": "7.15.8",
+    "@babel/preset-env": "7.15.8"
+  },
+  "bugs": {
+    "url": "https://github.com/Sumasbrot/CalcFramework/issues"
+  },
+  "homepage": "https://github.com/Sumasbrot/CalcFramework#readme"
+}
