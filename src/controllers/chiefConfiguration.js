@@ -12,6 +12,7 @@
 
  var chiefData = require('./chiefData');
  var configurator =  require('../executrix/configurator');
+ var D = require('../structures/data');
  var path = require('path');
  var baseFileName = path.basename(module.filename, path.extname(module.filename));
  var namespacePrefix = `controllers.${baseFileName}.`;
@@ -38,6 +39,7 @@ function setupConfiguration(appConfigPath, frameworkConfigPath) {
   allFrameworkConfigData = chiefData.setupAllJsonConfigData('frameworkConfigPath', 'configuration');
   // TODO: parseLoadedConfigurationData
   // TODO: merge App Config Data & Framework Config D
+  console.log('ALL DATA IS: ' + JSON.stringify(D));
   console.log(`END ${namespacePrefix}${functionName} function`);
 };
 

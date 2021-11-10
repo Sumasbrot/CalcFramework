@@ -1,7 +1,7 @@
 {
   "system.dateTimeStamp": "YYYYMMDD-HHmmss-SSS",
-  "system.dateStamp": "YYYYMMDD"
+  "system.dateStamp": "YYYYMMDD",
   "system.timeStamp": "HHmmss-SSS",
-  "system.argumentDrivenInterface": false
+  "system.argumentDrivenInterface": false,
   "system.enableDebugConfigurationSettings": true
 }

@@ -79,24 +79,26 @@ function loadAllJsonData(filesToLoad, contextName) {
   }
 
   // Now we need to determine if we should load the rest of the data.
-  if (multiMergedData['system']['system.enableDebugConfigurationSettings'] ||
-  multiMergedData['system']['system.enableDebugConfigurationSettings'].toUpperCase() === 'TRUE') {
-    for (let j = 0; j < filesToLoad.length; j++) {
-      let fileToLoad = filesToLoad[j];
-      if (!fileToLoad.includes(systemConfigFileName) && !fileToLoad.includes(applicationConfigFileName) &&
-      fileToLoad.toUpperCase().includes('.JSON')) {
-        let dataFile = preprocessJsonFile(fileToLoad);
+  if (multiMergedData['system']['system.enableDebugConfigurationSettings']) {
+    if (multiMergedData['system']['system.enableDebugConfigurationSettings'] === true ||
+    multiMergedData['system']['system.enableDebugConfigurationSettings'].toUpperCase() === 'TRUE') {
+      for (let j = 0; j < filesToLoad.length; j++) {
+        let fileToLoad = filesToLoad[j];
+        if (!fileToLoad.includes(systemConfigFileName) && !fileToLoad.includes(applicationConfigFileName) &&
+        fileToLoad.toUpperCase().includes('.JSON')) {
+          let dataFile = preprocessJsonFile(fileToLoad);
 
-        if (!multiMergedData['debugSettings']) {
-          multiMergedData['debugSettings'] = {};
-          multiMergedData['debugSettings'] = dataFile;
-        } else {
-          Object.assign(multiMergedData['debugSettings'], dataFile);
-        }
-      }
-    }
-  }
-  parsedDataFile = multiMergedData;
+          if (!multiMergedData['debugSettings']) {
+            multiMergedData['debugSettings'] = {};
+            multiMergedData['debugSettings'] = dataFile;
+          } else {
+            Object.assign(multiMergedData['debugSettings'], dataFile);
+          }
+        } // If-condition: fileToLoad.toUpperCase().includes('.JSON')
+      } // for-loop: let j = 0; j < filesToLoad.length; j++
+    } // If-condition:  === true || .toUpperCase() === 'TRUE'
+  }  // If-condition: if (multiMergedData['system']['system.enableDebugConfigurationSettings']
+  parsedDataFiles = multiMergedData;
   console.log(`parsedDataFiles is: ${JSON.stringify(parsedDataFiles)}`);
   console.log(`END ${namespacePrefix}${functionName} function`);
   return parsedDataFiles;
@@ -113,7 +115,7 @@ function loadAllJsonData(filesToLoad, contextName) {
 function preprocessJsonFile(fileToLoad) {
   let functionName = preprocessJsonFile.name;
   console.log(`BEGIN ${namespacePrefix}${functionName} function`);
-  console.log(`fileToLoad is: ${filesToLoad}`);
+  console.log(`fileToLoad is: ${fileToLoad}`);
   let dataFile = fileOperations.getJsonData(fileToLoad);
   console.log(`dataFile is: ${JSON.stringify(dataFile)}`);
   console.log(`END ${namespacePrefix}${functionName} function`);

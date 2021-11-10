@@ -30,7 +30,7 @@ function initFramework(clientConfiguration) {
   let appRootPath = warden.processRootPath(clientConfiguration);
   clientConfiguration['appRootPath'] = appRootPath;
   clientConfiguration['appConfigPath'] = appRootPath + clientConfiguration['appConfigReferencePath'];
-  clientConfiguration['frameworkConfigPath'] = appRootPath + '//src//framework//resources//configuration//';
+  clientConfiguration['frameworkConfigPath'] = appRootPath + '//src//resources//configuration//';
   warden.initFrameworkSchema(clientConfiguration);
   console.log(`END ${namespacePrefix}${functionName} function`);
 };
