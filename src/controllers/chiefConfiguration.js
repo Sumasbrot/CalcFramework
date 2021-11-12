@@ -31,14 +31,16 @@ function setupConfiguration(appConfigPath, frameworkConfigPath) {
   console.log(`BEGIN ${namespacePrefix}${functionName} function`);
   console.log(`appConfigPath is: ${appConfigPath}`);
   console.log(`frameworkConfigPath is: ${JSON.stringify(frameworkConfigPath)}`);
-  configurator.setConfigurationSetting('appConfigPath', appConfigPath);
-  configurator.setConfigurationSetting('frameworkConfigPath', frameworkConfigPath);
+  configurator.setConfigurationSetting('system', 'appConfigPath', appConfigPath);
+  configurator.setConfigurationSetting('system', 'frameworkConfigPath', frameworkConfigPath);
   let allAppConfigData = {};
   let allFrameworkConfigData = {};
   allAppConfigData = chiefData.setupAllJsonConfigData('appConfigPath', 'configuration');
   allFrameworkConfigData = chiefData.setupAllJsonConfigData('frameworkConfigPath', 'configuration');
   // TODO: parseLoadedConfigurationData
   // TODO: merge App Config Data & Framework Config D
+  console.log(`allFrameworkConfigData is: ${JSON.stringify(allFrameworkConfigData)}`);
+  console.log(`allAppConfigData is: ${JSON.stringify(allAppConfigData)}`);
   console.log('ALL DATA IS: ' + JSON.stringify(D));
   console.log(`END ${namespacePrefix}${functionName} function`);
 };
