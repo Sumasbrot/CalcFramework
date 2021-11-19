@@ -2,7 +2,7 @@
  * @file configurator.js
  * @module configurator
  * @description Contains the function necessary to set and get configuration settings from the shared data structure.
- * @requires module:date
+ * @requires module:data
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Vlad Sorokin
  * @date 2021/10/19
