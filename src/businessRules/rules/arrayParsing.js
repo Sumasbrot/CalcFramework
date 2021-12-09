@@ -25,7 +25,7 @@
  * @author Vlad Sorokin
  * @date 2021/11/17
  */
-export conts replaceCharacterWithCharacter = function(inputData, inputMetaData) {
+const replaceCharacterWithCharacter = function(inputData, inputMetaData) {
   let functionName = replaceCharacterWithCharacter.name;
   console.log(`BEGIN ${namespacePrefix}${functionName} function`);
   console.log(`inputData is: ${inputData}`);
