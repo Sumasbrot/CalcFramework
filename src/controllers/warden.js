@@ -4,6 +4,7 @@
  * @description Contains all the function to entire application framework at the level.
  * Also  provides an interface to easily manageall the framework features & various functionality a single entry point.
  * @requires module:chiefConfiguration
+ * @requires module:ruleBroker
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Vlad Sorokin
  * @date 2021/10/19
@@ -11,6 +12,7 @@
  */
 
 var chiefConfiguration = require('./chiefConfiguration');
+var ruleBroker = require('../brokers/ruleBroker');
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 var namespacePrefix = `framework.cotrollers.${baseFileName}.`;
@@ -54,13 +56,11 @@ function initFrameworkSchema(configData) {
   let functionName = initFrameworkSchema.name;
   console.log(`BEGIN ${namespacePrefix}${functionName} function`);
   console.log(`configData is: ${JSON.stringify(configData)}`);
-
   let appConfigPath = configData['appConfigPath'];
   console.log(`appConfigPath is: ${appConfigPath}`);
   let frameworkConfigPath = configData['frameworkConfigPath'];
   console.log(`frameworkConfigPath is: ${frameworkConfigPath}`);
   chiefConfiguration.setupConfiguration(appConfigPath, frameworkConfigPath);
-
   console.log(`END ${namespacePrefix}${functionName} function`);
 };
 
