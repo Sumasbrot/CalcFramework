@@ -13,7 +13,7 @@
   "author": "Vlad Sorokin",
   "license": "MIT",
   "dependencies": {
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "prompt-sync": "^4.2.0"
   },
   "devDependencies": {
